@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>💘 Walentynka</title>
+
 <style>
 body {
     margin: 0;
@@ -39,6 +40,7 @@ button {
     color: white;
 }
 
+/* ❤️ Serduszka i róże */
 .heart, .rose {
     position: absolute;
     animation: fall linear infinite;
@@ -51,9 +53,31 @@ button {
     0% { transform: translateY(-50px); opacity: 1; }
     100% { transform: translateY(100vh); opacity: 0; }
 }
+
+/* 😈 Tekst w prawym górnym rogu */
+.corner-text {
+    position: fixed;
+    top: 10px;
+    right: 12px;
+    font-size: 12px;
+    color: black;
+    opacity: 0.85;
+}
 </style>
 </head>
+
 <body>
+
+<!-- 🎶 Ukryta muzyka (Grey's Anatomy – Chasing Cars) -->
+<iframe id="music"
+    src=""
+    allow="autoplay"
+    style="display:none">
+</iframe>
+
+<div class="corner-text">
+    i tak Julia byś nie kliknęła tego NIE, to po co próbujesz 😏
+</div>
 
 <h1>🌹 Czy zostaniesz moją walentynką? ❤️</h1>
 
@@ -62,6 +86,10 @@ button {
 
 <script>
 function tak() {
+    // start muzyki po kliknięciu (wymóg przeglądarek)
+    document.getElementById("music").src =
+        "https://www.youtube.com/embed/Jl5vi9ir49g?autoplay=1&loop=1&playlist=Jl5vi9ir49g";
+
     document.body.innerHTML =
         '<h1>💖 Wiedziałem!<br>Uczyniłaś mnie najszczęśliwszym 🥰🌹</h1>';
 }
